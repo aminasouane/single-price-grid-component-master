@@ -1,0 +1,94 @@
+* {
+    box-sizing:border-box;
+    font-family: 'Karla', sans-serif;
+}
+:root {
+    --primary-color : hsl(179, 62%, 43%);
+    --secondary-color : hsl(71, 73%, 54%);
+}
+body {
+    background-color: hsl(204, 43%, 93%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(minmax(50%, 1fr));
+    grid-template-areas: "about about" "subscribe more";
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.075),
+               -1px -1px 20px 1px rgba(0, 0, 0, 0.075);
+}
+@media (max-width: 557px) {
+    .container {
+     grid-template-areas: "about about" "subscribe subscribe" "more more";  
+    }
+}
+.container > * {
+    padding:20px 30px;
+    font-size: 15px;
+}
+.container .about {
+background-color: #ffffff;
+grid-area: about;
+}
+.container .about  h2 {
+    color : var( --primary-color);
+}
+.container .about  h3 {
+    color : var( --secondary-color)
+}
+.container .about  p {
+    color : hsl(218, 22%, 67%);
+}
+.container .subscribe {
+grid-area: subscribe;
+background-color: var( --primary-color);
+color : hsl(204, 43%, 93%)
+}
+.container .subscribe h3 {
+    margin-top: 0;
+}
+.container .subscribe  p:nth-of-type(1) {
+    color : #ffffff7c
+}
+.container .subscribe  p:nth-of-type(1) span{
+font-size: 25px;
+font-weight: 700;
+color : #ffffff;
+}
+.container .subscribe  a {
+    text-decoration: none;
+    color : #ffffff;
+    background-color: var(--secondary-color);
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.075),
+    -1px -1px 20px 1px rgba(0, 0, 0, 0.075);
+}
+.container .more {
+background-color: hsl(179, 64%, 49%);
+grid-area: more;
+color : hsl(204, 43%, 93%);
+padding-right: 70px;
+
+}
+.container .more  h3 {
+    margin-top: 0;
+}
+.container .more ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 13px;
+}
+.container .more ul li {
+margin-bottom: 5px;
+}
